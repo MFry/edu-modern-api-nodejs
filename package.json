@@ -1,0 +1,17 @@
+{
+  "name": "modern-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "hapi": "^17.5.0",
+    "inert": "^5.1.0",
+    "nodemon": "^1.17.5"
+  }
+}
