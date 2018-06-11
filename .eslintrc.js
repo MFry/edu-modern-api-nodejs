@@ -8,7 +8,7 @@
 //  together in harmony. (ref: https://stackoverflow.com/q/46201647/1771644)
 module.export = {
   parser: "babel-eslint",
-  extends: ["prettier"],
+  extends: ["prettier"], // TODOL Extend airbnb
   plugins: ["prettier"],
   env: {
     node: true,
