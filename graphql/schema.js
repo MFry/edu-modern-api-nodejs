@@ -3,26 +3,43 @@ const { makeExecutableSchema } = require("graphql-tools");
 const PaintingType = require("./PaintingType");
 const Painting = require("./../models/Painting");
 
-// Some fake data
-const books = [
-  {
-    title: "Harry Potter and the Sorcerer's stone",
-    author: "J.K. Rowling"
-  },
-  {
-    title: "Jurassic Park",
-    author: "Michael Crichton"
-  }
-];
-
 // The GraphQL schema in string form
 const typeDefs = `
-  type Query { books: [Book] }
-  type Book { title: String, author: String }
+  scalar Date
+
+  type Address {
+    street: String
+    city: String
+    state: String
+    zipcode: String
+  }
+
+  type Course {
+    label: String
+  }
+
+  type Query {
+     Events: [Event]
+     Event(id: ID!): Event
+  }
+
+  type Event {
+     id: ID!
+     teacher: String
+     title: String
+     description: String
+     start_date: Date
+     address: Address
+     open_slots: Int
+     max_slots: Int
+     courses: [Course]
+  }
+
+  
 `;
 
 const resolvers = {
-  Query: { books: () => books }
+  Query: { Events: () => events }
 };
 
 module.exports = makeExecutableSchema({
